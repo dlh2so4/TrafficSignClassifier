@@ -19,9 +19,8 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image1]: ./Writeup/bar.PNG "Visualization"
+[image2]: ./Writeup/grayscale.PNG "Grayscaling"
 [image4]: ./TestImages/a.jpg "Traffic Sign 1"
 [image5]: ./TestImages/b.jpg "Traffic Sign 2"
 [image6]: ./TestImages/c.jpg "Traffic Sign 3"
@@ -115,9 +114,9 @@ My final model results were:
 * training set accuracy of ?
     0.999
 * validation set accuracy of ? 
-    0.963
+    0.958
 * test set accuracy of ?
-    0.939
+    0.947
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
 * What were some problems with the initial architecture?
@@ -131,7 +130,7 @@ The LeNet Model Architecture was chosen.
 * Why did you believe it would be relevant to the traffic sign application?
 The LeNet Architecture is well known for classification of images, it meets the goal of the traffic sign classifier.
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- The training set, validation set and test set all have more than 0.93 accuracy, this is a pretty good result. It shows that the model is able to give good prediction.
+ The training set, validation set and test set all have more than 0.947 accuracy, this is a pretty good result. It shows that the model is able to give good prediction.
 
 ### Test a Model on New Images
 
@@ -142,7 +141,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The 4th image might be difficult to classify because it has shadow on one side. The 5th image is blur, so it can potentially be another challenge. When I run the preprocess without grayscale and normalization, they did not get recognized. They got successfully predicted when I increase grayscale and normalization.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -151,13 +150,13 @@ Here are the results of the prediction:
 | Image					| Prediction									| 
 |:---------------------:|:---------------------------------------------:| 
 | General caution 		| General caution								| 
-| Slippery road			| Slippery road 								|
 | Children crossing		| Children crossing								|
-| No entry				| No entry					 					|
+| Slippery road			| Slippery road 								|
 | Ahead only			| Ahead only									|
+| No entry				| No entry					 					|
 
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 0.947.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -167,14 +166,55 @@ For the first image, the model is relatively sure that this is a General caution
 
 | Probability 			|     Prediction								| 
 |:---------------------:|:---------------------------------------------:| 
-| 100%					| General caution   									| 
-| 0%					| Traffic signals 										|
-| 0%					| Bumpy road											|
-| 0%					| Dangerous curve to the right					 				|
-| 0%					| Road work      							|
+| 100%					| 18-General caution   									| 
+| 0%					| 26 										|
+| 0%					| 14											|
+| 0%					| 25					 				|
+| 0%					| 17      							|
 
 
-For the second image ... 
+For the first image, the model is relatively sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
+
+| Probability 			|     Prediction								| 
+|:---------------------:|:---------------------------------------------:| 
+| 100%					| 17-No entry   									| 
+| 0%					| 0 										|
+| 0%					| 1											|
+| 0%					| 26					 				|
+| 0%					| 40      							|
+
+
+For the first image, the model is relatively sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
+
+| Probability 			|     Prediction								| 
+|:---------------------:|:---------------------------------------------:| 
+| 85%					| 23-Slippery road   									| 
+| 15%					| 29 										|
+| 0%					| 9											|
+| 0%					| 19					 				|
+| 0%					| 35      							|
+
+
+For the first image, the model is relatively sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
+
+| Probability 			|     Prediction								| 
+|:---------------------:|:---------------------------------------------:| 
+| 94%					| 28-Children crossing   									| 
+| 4%					| 30 										|
+| 2%					| 34											|
+| 0%					| 29					 				|
+| 0%					| 18      							|
+
+
+For the first image, the model is relatively sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
+
+| Probability 			|     Prediction								| 
+|:---------------------:|:---------------------------------------------:| 
+| 100%					| 35-Ahead only   									| 
+| 0%					| 3 										|
+| 0%					| 15											|
+| 0%					| 9					 				|
+| 0%					| 10      							|
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
