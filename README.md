@@ -45,15 +45,25 @@ I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
 * The size of training set is ?
+
     34799
+    
 * The size of the validation set is ?
+
     4410
+    
 * The size of test set is ?
+
     12630
+    
 * The shape of a traffic sign image is ?
+
     (32, 32, 3)
+    
 * The number of unique classes/labels in the data set is ?
+
     43
+    
 
 #### 2. Include an exploratory visualization of the dataset.
 
@@ -66,6 +76,7 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
 As a first step, I decided to convert the images to grayscale because of 3 reasons:
+
     1. For the traffic sign, even with grayscale iamges, meaning can be determined.
     2. Grayscale image only has 1 color channel, which will save memory compare with 3 color channel images.
     3. After a test, I found that the preprocess of grayscale can improve accuracy in the result. 
@@ -112,25 +123,31 @@ To train the model, I used an Adam Optimizer with 128 batch size, 60 epochs and 
 
 My final model results were:
 * training set accuracy of ?
+
     0.999
+    
 * validation set accuracy of ? 
+
     0.958
+    
 * test set accuracy of ?
+
     0.947
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+    
 
 If a well known architecture was chosen:
 * What architecture was chosen?
+
 The LeNet Model Architecture was chosen.
+
 * Why did you believe it would be relevant to the traffic sign application?
+
 The LeNet Architecture is well known for classification of images, it meets the goal of the traffic sign classifier.
+
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+
  The training set, validation set and test set all have more than 0.947 accuracy, this is a pretty good result. It shows that the model is able to give good prediction.
+ 
 
 ### Test a Model on New Images
 
@@ -162,7 +179,7 @@ The model was able to correctly guess 5 of the 5 traffic signs, which gives an a
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
+For the first image, the model is sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
 
 | Probability 			|     Prediction								| 
 |:---------------------:|:---------------------------------------------:| 
@@ -173,7 +190,7 @@ For the first image, the model is relatively sure that this is a General caution
 | 0%					| 17      							|
 
 
-For the first image, the model is relatively sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
+For the second image, the model is sure that this is a No entry sign (probability of 100%), and the image does contain a No entry sign. The top five soft max probabilities were
 
 | Probability 			|     Prediction								| 
 |:---------------------:|:---------------------------------------------:| 
@@ -184,7 +201,7 @@ For the first image, the model is relatively sure that this is a General caution
 | 0%					| 40      							|
 
 
-For the first image, the model is relatively sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
+For the first image, the model is relatively sure that this is a Slippery road sign (probability of 85%), and the image does contain a Slippery road sign. The top five soft max probabilities were
 
 | Probability 			|     Prediction								| 
 |:---------------------:|:---------------------------------------------:| 
@@ -195,7 +212,7 @@ For the first image, the model is relatively sure that this is a General caution
 | 0%					| 35      							|
 
 
-For the first image, the model is relatively sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
+For the first image, the model is relatively sure that this is a Children crossing sign (probability of 94%), and the image does contain a Children crossing sign. The top five soft max probabilities were
 
 | Probability 			|     Prediction								| 
 |:---------------------:|:---------------------------------------------:| 
@@ -206,7 +223,7 @@ For the first image, the model is relatively sure that this is a General caution
 | 0%					| 18      							|
 
 
-For the first image, the model is relatively sure that this is a General caution sign (probability of 100%), and the image does contain a General caution sign. The top five soft max probabilities were
+For the first image, the model is relatively sure that this is a Ahead only sign (probability of 100%), and the image does contain a Ahead only sign. The top five soft max probabilities were
 
 | Probability 			|     Prediction								| 
 |:---------------------:|:---------------------------------------------:| 
